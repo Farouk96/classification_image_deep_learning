@@ -1,1 +1,1 @@
-# classification_image_deep_learning
+# Dog Breed Classification with Deep Learning Methods
