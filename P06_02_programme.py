@@ -1,15 +1,16 @@
 import gradio as gr
 import tensorflow as tf
-from tensorflow.keras.utils import img_to_array, get_file
+from tensorflow.keras.utils import img_to_array
 import keras
 import cv2
 import numpy as np
-from os.path import dirname, realpath, join
 
-# Load human-readable labels for ImageNet.
-current_dir = dirname(realpath(__file__))
-with open(join(current_dir, "dog_names.json")) as labels_file:
-    labels = json.load(labels_file)
+
+my_content = open("dogs_name.txt", "r")
+dog_names = my_content.read()
+dogs_list = dog_names.split('\n')
+my_content.close()
+print(dogs_list)
 
 model = keras.models.load_model("my_model.h5")
 
@@ -18,9 +19,9 @@ def image_classifier(im):
   img = cv2.resize(img,(224,224))
   img = img.reshape(1,224,224,3)
   predictions = model.predict(img)
-  predictions = tf.nn.softmax(predictions[0])
+  predictions = tf.nn.softmax(predictions)
   predictions = np.argmax(predictions)
-  return {labels[i]: float(predictions[i]) for i in range(120)}
+  return dogs_list[predictions]
 
 iface = gr.Interface(
     image_classifier, 
@@ -30,4 +31,4 @@ iface = gr.Interface(
     interpretation="default")
 
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(share=True)
