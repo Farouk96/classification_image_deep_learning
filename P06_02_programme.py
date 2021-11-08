@@ -1,20 +1,23 @@
-import gradio as gr
+import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.utils import img_to_array
 import keras
+from PIL import Image
 import cv2
 import numpy as np
+
+st.title("Image Classification with Inception V3")
+st.header("Dog Breed Classification")
+st.text("Upload a dog image to obtain its breed")
 
 
 my_content = open("dogs_name.txt", "r")
 dog_names = my_content.read()
 dogs_list = dog_names.split('\n')
 my_content.close()
-print(dogs_list)
 
-model = keras.models.load_model("my_model.h5")
-
-def image_classifier(im):
+def image_classifier(im, weights_file):
+  model = keras.models.load_model(weights_file)
   img = img_to_array(im)
   img = cv2.resize(img,(224,224))
   img = img.reshape(1,224,224,3)
@@ -23,12 +26,12 @@ def image_classifier(im):
   predictions = np.argmax(predictions)
   return dogs_list[predictions]
 
-iface = gr.Interface(
-    image_classifier, 
-    gr.inputs.Image(shape=(224, 224)), 
-    gr.outputs.Label(num_top_classes=3),
-    capture_session=True,
-    interpretation="default")
+uploaded_file = st.file_uploader("Choose a Dog Image ...", type="jpg")
 
-if __name__ == "__main__":
-    iface.launch(share=True)
+if uploaded_file is not None:
+  image = Image.open(uploaded_file)
+  st.image(image, caption='Uploaded image.', use_column_width=True)
+  st.write("")
+  st.write("Classifying...")
+  label = image_classifier(image, 'my_model.h5')
+  st.write(label)
