@@ -8,7 +8,7 @@ import numpy as np
 
 st.title("Who let the dog out ?")
 st.header("Dog Breed Classification - Inception V3")
-st.image("doggo_patte.jpg", width=150)
+st.image("banner.jpg")
 st.text("Upload a dog image to obtain its breed. Only 120 breeds available.")
 
 
@@ -37,4 +37,5 @@ if uploaded_file is not None:
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
 
+st.image("paw_footer.jpg")
 st.write("Created by Cécile Guillot")
