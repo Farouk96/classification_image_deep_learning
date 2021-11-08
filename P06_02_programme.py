@@ -6,10 +6,11 @@ from PIL import Image
 import cv2
 import numpy as np
 
-st.title("Image Classification with Inception V3")
-st.header("Dog Breed Classification")
-st.subheader("Created by Cécile Guillot")
-st.image("doggo_patte.jpg")
+st.title("Who let the dog out ?")
+st.header("Dog Breed Classification - Inception V3")
+st.image("doggo_patte.jpg", width=None)
+
+st.text("Created by Cécile Guillot")
 st.text("Upload a dog image to obtain its breed")
 
 
