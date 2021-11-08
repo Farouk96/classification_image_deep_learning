@@ -18,7 +18,8 @@ my_content.close()
 
 def image_classifier(img, weights_file):
   model = keras.models.load_model(weights_file)
-  image = cv2.resize(img,(224,224))
+  image = img_to_array(img)
+  image = cv2.resize(image,(224,224))
   image = image.reshape(1,224,224,3)
   predictions = model.predict(image)
   predictions = tf.nn.softmax(predictions)
