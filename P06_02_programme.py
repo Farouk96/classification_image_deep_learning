@@ -2,7 +2,8 @@ import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.utils import img_to_array
 import keras
-from PIL import Image, ImageOps
+from PIL import Image
+import cv2
 import numpy as np
 
 st.title("Image Classification with Inception V3")
@@ -27,9 +28,9 @@ def image_classifier(img, weights_file):
 uploaded_file = st.file_uploader("Choose a Dog Image ...", type="jpg")
 
 if uploaded_file is not None:
-  image = Image.open(uploaded_file)
-  st.image(image, caption='Uploaded image.', use_column_width=True)
+  img = Image.open(uploaded_file)
+  st.image(img, caption='Uploaded image.', use_column_width=True)
   st.write("")
   st.write("Classifying...")
-  label = image_classifier(image, 'my_model.h5')
+  label = image_classifier(img, 'my_model.h5')
   st.write(label)
