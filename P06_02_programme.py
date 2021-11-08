@@ -38,4 +38,4 @@ if uploaded_file is not None:
   st.write(label)
 
 
-st.text("Created by Cécile Guillot")
+st.markdown("**Created by Cécile Guillot, Machine Learning Engineer**")
