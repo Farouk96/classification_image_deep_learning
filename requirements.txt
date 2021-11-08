@@ -1,7 +1,5 @@
 tensorflow
 pip==21.3.1
-PIL
 keras
 cv2
 numpy
-streamlit
