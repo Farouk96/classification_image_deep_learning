@@ -37,5 +37,5 @@ if uploaded_file is not None:
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
 
-st.image("paw_footer.jpg", width=250)
-st.write("Created by Cécile Guillot")
+
+st.text("Created by Cécile Guillot")
