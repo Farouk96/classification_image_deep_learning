@@ -17,11 +17,9 @@ my_content.close()
 
 def image_classifier(img, weights_file):
   model = keras.models.load_model(weights_file)
-  image = img
-  size = (224, 224)
-  image = ImageOps.fit(image, size, Image.ANTIALIAS)
-  image_array = np.asarray(image)
-  predictions = model.predict(image_array)
+  image = cv2.resize(img,(224,224))
+  image = image.reshape(1,224,224,3)
+  predictions = model.predict(image)
   predictions = tf.nn.softmax(predictions)
   predictions = np.argmax(predictions)
   return dogs_list[predictions]

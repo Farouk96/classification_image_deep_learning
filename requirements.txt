@@ -3,3 +3,4 @@ pip==21.3.1
 keras
 numpy
 python==3.8.5
+opencv-python
