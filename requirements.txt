@@ -2,5 +2,5 @@ tensorflow
 pip==21.3.1
 keras
 numpy
-python==3.8
+python>3.7
 opencv-python
