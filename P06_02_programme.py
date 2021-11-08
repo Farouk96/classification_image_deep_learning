@@ -8,10 +8,8 @@ import numpy as np
 
 st.title("Who let the dog out ?")
 st.header("Dog Breed Classification - Inception V3")
-st.image("doggo_patte.jpg", width=250)
-
-st.text("Created by Cécile Guillot")
-st.text("Upload a dog image to obtain its breed")
+st.image("doggo_patte.jpg", width=150)
+st.text("Upload a dog image to obtain its breed. Only 120 breeds available.")
 
 
 my_content = open("dogs_name.txt", "r")
@@ -29,7 +27,7 @@ def image_classifier(img, weights_file):
   predictions = np.argmax(predictions)
   return dogs_list[predictions]
 
-uploaded_file = st.file_uploader("Choose a Dog Image ...", type="jpg")
+uploaded_file = st.file_uploader("Choose a Doggo to classify ...", type="jpg")
 
 if uploaded_file is not None:
   img = Image.open(uploaded_file)
@@ -38,3 +36,5 @@ if uploaded_file is not None:
   st.write("Classifying...")
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
+
+st.write("Created by Cécile Guillot")
