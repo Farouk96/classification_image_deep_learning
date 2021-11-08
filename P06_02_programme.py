@@ -3,7 +3,6 @@ import tensorflow as tf
 from tensorflow.keras.utils import img_to_array
 import keras
 from PIL import Image
-import cv2
 import numpy as np
 
 st.title("Image Classification with Inception V3")
@@ -19,7 +18,7 @@ my_content.close()
 def image_classifier(im, weights_file):
   model = keras.models.load_model(weights_file)
   img = img_to_array(im)
-  img = cv2.resize(img,(224,224))
+  img = Image.resize(img,(224,224))
   img = img.reshape(1,224,224,3)
   predictions = model.predict(img)
   predictions = tf.nn.softmax(predictions)
