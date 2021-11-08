@@ -27,7 +27,7 @@ def image_classifier(img, weights_file):
   predictions = np.argmax(predictions)
   return dogs_list[predictions]
 
-uploaded_file = st.file_uploader("Choose a Doggo to classify ...", type="jpg")
+uploaded_file = st.file_uploader("Upload your image...", type="jpg")
 
 if uploaded_file is not None:
   img = Image.open(uploaded_file)
@@ -37,5 +37,5 @@ if uploaded_file is not None:
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
 
-st.image("paw_footer.jpg")
+st.image("paw_footer.jpg", width=250)
 st.write("Created by Cécile Guillot")
