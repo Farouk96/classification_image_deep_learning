@@ -8,6 +8,7 @@ import numpy as np
 
 st.title("Image Classification with Inception V3")
 st.header("Dog Breed Classification")
+st.subheader("Created by Cécile Guillot")
 st.text("Upload a dog image to obtain its breed")
 
 
