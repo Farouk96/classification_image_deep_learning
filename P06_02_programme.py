@@ -15,13 +15,13 @@ dog_names = my_content.read()
 dogs_list = dog_names.split('\n')
 my_content.close()
 
-def image_classifier(im, weights_file):
+def image_classifier(img, weights_file):
   model = keras.models.load_model(weights_file)
-  img = img_to_array(im)
+  image = img
   size = (224, 224)
-  img = ImageOps.fit(img, size, Image.ANTIALIAS)
-  img = img.reshape(1,224,224,3)
-  predictions = model.predict(img)
+  image = ImageOps.fit(image, size, Image.ANTIALIAS)
+  image_array = np.asarray(image)
+  predictions = model.predict(image_array)
   predictions = tf.nn.softmax(predictions)
   predictions = np.argmax(predictions)
   return dogs_list[predictions]
