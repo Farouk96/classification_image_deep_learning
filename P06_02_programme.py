@@ -8,7 +8,7 @@ import numpy as np
 
 st.title("Who let the dog out ?")
 st.header("Dog Breed Classification - Inception V3")
-st.image("doggo_patte.jpg", width=50)
+st.image("doggo_patte.jpg", width=500)
 
 st.text("Created by Cécile Guillot")
 st.text("Upload a dog image to obtain its breed")
