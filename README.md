@@ -1,7 +1,5 @@
 # Dog Breed Classification with Deep Learning Methods
 
-## Cécile Guillot
-
 ### Description rapide du projet
 
 Ce projet est à la base d'une application déployée en ligne. Il permet la classification d'images de chiens en fonction de leur race. Des méthodes de transfer learning ont été utilisé pour obtenir l'algorithme de computer vision associée à cette application. Le modèle choisi est le modèle Inception V3. Ce choix a été fait pour plusieurs raisons : 
