@@ -1,5 +1,6 @@
-**Dog Breed Classification with Deep Learning Methods**
-*Cécile Guillot*
+#Dog Breed Classification with Deep Learning Methods
+
+##Cécile Guillot
 
 *Description rapide du projet*
 
