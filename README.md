@@ -17,6 +17,6 @@ Une fois le modèle entraîné, une application Web sous Streamlit a été utili
 - Matplotlib
 - PIL
 - OpenCV
-- Tensorflow 
+- Tensorflow/Keras
 - Streamlit
 
