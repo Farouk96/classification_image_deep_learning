@@ -19,4 +19,3 @@ Une fois le modèle entraîné, une application Web sous Streamlit a été utili
 - OpenCV
 - Tensorflow/Keras
 - Streamlit
-
