@@ -43,7 +43,7 @@ if uploaded_file is not None:
   img = Image.open(uploaded_file)
   st.image(img, caption='Uploaded image.', use_column_width=True)
   st.write("")
-  st.write("Classifying in progress...")
+  st.write("Classifying...")
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
 
