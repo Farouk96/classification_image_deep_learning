@@ -7,13 +7,13 @@ from PIL import Image
 import cv2
 import numpy as np
 
-# Displaying in head
+# Displaying in-head
 st.title("Who let the dog out ?")
 st.header("Dog Breed Classification - Inception V3")
 st.image("banner.jpg")
 st.text("Upload a dog image to obtain its breed. Only 120 breeds available.")
 
-# Importing labels nome
+# Importing labels name
 my_content = open("dogs_name.txt", "r")
 dog_names = my_content.read()
 dogs_list = dog_names.split('\n')
@@ -43,7 +43,7 @@ if uploaded_file is not None:
   img = Image.open(uploaded_file)
   st.image(img, caption='Uploaded image.', use_column_width=True)
   st.write("")
-  st.write("Classifying in progress...")
+  st.write("Classifying...")
   label = image_classifier(img, 'my_model.h5')
   st.write(label)
 
