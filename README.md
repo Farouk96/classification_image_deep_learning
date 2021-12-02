@@ -11,6 +11,8 @@ Le détail de la démarche utilisé est présenter dans le notebook *P06_01_note
 
 Une fois le modèle entraîné, une application Web sous Streamlit a été utilisé. Le choix de ce package a permis d'obtenir quelque chose de rapidement fonctionnel et de facilement déployable et partageable. Le code de cette application se trouve dans le script Python *P06_02_programme*. Les packages nécessaires se trouvent dans le fichier requirements.txt. L'application est hébergé grâce à l'outil Streamlit Share et se trouve à cette adresse : [API](https://share.streamlit.io/sylvariane/classification_image_deep_learning/main/P06_02_programme.py).
 
+La démonstration vidéo de l'application est hébergée à cette adresse : [Demo](https://youtu.be/L0LwT17WFKE).
+
 ### Outils utilisés
 - Jupyter Notebook/Google Colab Pro
 - Python 3.8.5
